@@ -78,25 +78,3 @@ Testler:
 cd backend
 npm test
 npm run typecheck
-```
-
-Üretim gibi tek sunucuda çalıştırmak için:
-
-```bash
-cd frontend && npm run build
-cd ../backend && npm run build && npm start   # arayüzü de 3000'den sunar
-```
-
-Model adı: varsayılan `claude-haiku-4-5-20251001`. Değiştirmek için
-`LLM_MODEL` ortam değişkenini ayarla. Model adlarının güncel listesini
-sağlayıcının dokümantasyonundan kontrol et.
-
-## Bilinen sınırlar (dürüst liste)
-
-- Gerçek bir LLM çağrısı bu repoda otomatik test edilmedi; testler sahte
-  (fake) istemci kullanır. Kendi API anahtarınla bir kez elle dene.
-- GitHub Actions dosyası standart bir şablondur, ilk push'ta çalışıp
-  çalışmadığına bakman gerekir.
-- Arayüz CV'yi yalnızca metin olarak alır (PDF yükleme yok).
-- Hız sınırı IP başınadır ve bellekte tutulur; sunucu yeniden başlarsa sıfırlanır.
-- Puan, bir dil modelinin yorumudur; kesin sonuç değil, karar desteğidir.
